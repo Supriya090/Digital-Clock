@@ -30,7 +30,7 @@ function clock() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Satirday",
+    "Saturday",
   ];
 
   if (hours < 10) {
@@ -52,7 +52,11 @@ function clock() {
   document.getElementById("daynum").innerHTML = dnum + ",";
   if (hours >= 12) {
     document.getElementById("period").innerHTML = "PM";
-    document.getElementById("hour").innerHTML = hours - 12;
+    if (hours != 22 && hours != 23) {
+      document.getElementById("hour").innerHTML = "0" + (hours - 12);
+    } else {
+      document.getElementById("hour").innerHTML = hours - 12;
+    }
   }
 }
 
